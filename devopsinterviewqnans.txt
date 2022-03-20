@@ -1,320 +1,298 @@
 GIT
-Why we need git? What makes git unique from other tools like SVN?
-Let's say i have maven repo cloned on to my local, did some changes and i have build the code now target folder will be generated. So now when i do git operations like git add, git commit or any other git operations target folder should not be considered, how would you achieve the same?
-difference between git pull and git fetch?
-How to clone specific branch in git?
+1. Why we need git? What makes git unique from other tools like SVN?
+2. Let's say i have maven repo cloned on to my local, 
+   did some changes and i have build the code now target folder will be generated. 
+   So now when i do git operations like git add, 
+   git commit or any other git operations target folder should not be considered, 
+   how would you achieve the same?
+3. Difference between git pull and git fetch?
+4. How to clone specific branch in git?
+
+
+5. Lets say your organization has github and bitbucket to store code, 
+   you have cloned a repo onto your local and changed directory name. 
+   after some days one of your team members asks you to share clone link,
+   how would you provide the same? 
+   I have shell script to delete particular dependency ( repo is maven project ). 
+   before running the script i need to clone repo to my local, 
+   here point to note i should only clone master branch and
+   only last commit ( last commit has all the code ) how would you do this?
+6. what is submodule and why we need submodule?
+7. Lets say you have changed 5 files a,b,c,d and e in a repo and you did git add ., 
+   now all the files are in staging area, 
+   now i decided not to commit file d. how would delete it from staging area?
+
+8. What is git-cherry-pick? why we use it?
+9. Let’s say you’re working on new feature in some branch, 
+   now your manager says stop working on that and change few other things on old code.
+   Here after changing the old code, I need to work on new code, 
+   so I need to place my new changes some place How would handle this scenario?
+10. What is a conflict in git?
+11. command to list all branches in a repo?
+
+12. What is git reset ? Types of reset ?
+13. How to delete local branch and remote branch in git ?
+14. Difference between git diff and git status ?
+15. What are hooks in git?
+
+16. what is the importance .git directory?
+17. what are the branches, diff between remote and local branches?
+18. what Branching strategy that you are familier with?
+19. What PR (Pull request) is? whats the importance of PR?
+
+
+20. Which version of git you have used?
+21. Difference between git merge and git rebase?
+22. What is git squash?
+23. Branching strategy used in your project?
+24. Command to list all commits?
+
+25. Branching strategy?
+26. Need a script which identify inactive branches ( no commits since 2 months )?
+27. How to set configs globally in git?
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 Maven
-when i issue mvn install what all things happen in background?
-what are the settings you need to do before running mvn deploy?
-why maven takes much time for 1st execution and from 2nd execution it will take less time?
-Unix and Shell Scripting
-How to get present working folder?
-How to copy files from local windows machine to cloud based Linux machine?
-A shell script named test.sh can accept 4 parameters i.e, a,b,c,d. the parameters wont be supplied in order always and number of parameters might also vary( only 2 parameters user might supply sometimes), how to identify position of letter c?
+1. When i issue mvn install what all things happen in background?
+2. What are the settings you need to do before running mvn deploy?
+3. why maven takes much time for 1st execution and from 2nd execution it will take less time?
+
+
+4. what is multi module project in maven and 
+   what are the setting you want to do in multi module parent and child project? what is dependency management?
+5. what is transitive dependency?
+
+6. Have you worked on commit based job in jenkins? 
+   what settings you need to do in jenkins and github to setup commit based job?
+7. you want to create 50 freestyle jobs with same configurations, 
+   but only change is job name. how would you achieve the same?
+8. How can you copy job from your local jenkins instance to other local jenkins instance?
+
+
+9. .m2 is local repository for maven, 
+   now I don’t want to use .m2 folder as my local repository I want to use some other folder as my local,
+   is it possible in maven?
+   If yes, how would you do that?
+   mvn install -Dmaven.repo.local=/alternate/repo/location
+   maven follows convention over configuration that means it assumes code should be there under src/main/java, 
+   test cases under src/tests and many more.Here my requirement is I don’t want to follow that conventions 
+   I need to use different folder structure is that possible in maven?
+   mvn help:effective-pom -Doutput=pom_eff.xml
+10. What are dependency and plugin in maven? Give one example for each?
+11. What are 3 build life cycles in maven?
+12. In Which tag we will mention output artifact type( like jar, war or any other)?
+
+
+13. What are things you need to set, if you want download dependency from private repository ?
+14. What are the issues you faced while working on maven projects?
+15. Command to skip the test cases in maven
+
+16. what is multi module project?
+17. what is the importance of dependency managment?
+18. what are the settings that you need to do for mvn deploy ( to push artifcats to repository )?
+19. mvn version that you have used?
+
+20. Tell me 3 build lifecycle in maven? What does mvn site does?
+21. Is there way by which we can set local repository as some other custom directory, other than .m2?
+22. Settings that you make for mvn deploy?
+23. What is the default value of packaging tag? What other values for other artifact types?
+24. What are GAV's?
+
+25. what are the tags that you came across in pom.xml?
+26. Explain maven life cycle?
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+Jenkins
+1. How to save only last 5 builds of jenkins job?
+2. Have you worked on Jenknsfile? can we use docker container as a node in Jenkinsfile? 
+   Who will handle docker container creation and deletion?
+   If i am building a maven project always docker container is fresh instance it will try to download dependency from repository, 
+   what measures you will take to reduce build time?
+3. Why we need multi branch pipeline?
+4. If you forget Jenkins password, how would you login back?
+
+5. How to Downgrade plugins in Jenkins?
+6. Have you worked on Jenkinsfile? Can we use different nodes for each stage?
+7. Can you list few ways by which we can trigger our build in Jenkins? What is the difference between Build Periodically and Poll SCM?
+
+8. How to set Jenkins build to fail based specific word in console output ?
+9. What are active and reactive parameters (Dynamic parameterization) in Jenkins ?
+10. How to customize the build number display to something else in Jenkins job page?
+11. What are multi branch pipeline?
+12. What is shared library in Jenkins ?
+
+13. what is the need of CICD tools?
+14. What type of Jenkinsfile you have worked on?
+15. In master slave setup if I want run job on specific node is is possible?
+16. what is the importance of Jenkins secrets?
+17. Monitoring
+18. If given a chance to setup monitoring solution for project what are tools that you use?
+
+19. What are types jobs you have worked on??
+20. Can we have job for pr and once merge is done the source branch should be deleted?
+21. How do you take Jenkins backup?
+22. Can you tell me importance of post block??
+
+23. list of best practices to follow while writing Jenkins pipeline?
+24. Is it possible to run each stage on different agaent?
+25. Is it possible to change success or error message that we see in console ouput ?
+26. Have list of command that has to executed in certain directory in the code, is it possible to do the same?
+27. Can we have versioning on Jenkins freestyle job?
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 Ansible
-Why we need ad-hoc ansible commands, scenario where you have used ansible ad-hoc command?
-When i need detailed logs on executing ansible playbook what option i need to use?
-what is ansible.cfg file?
-what are the modules have you worked on? which module will you use for getting the file from node to master?
-Lets say i have a playbook which has 5 tasks in playbook, first 2 tasks should run on local machine and other 3 tasks should run on node?
-Jenkins
-How to save only last 5 builds of jenkins job?
-Have you worked on Jenknsfile? can we use docker container as a node in Jenkinsfile? Who will handle docker container creation and deletion? If i am building a maven project always docker container is fresh instance it will try to download dependency from repository, what measures you will take to reduce build time?
-Why we need multi branch pipeline?
-If you forget Jenkins password, how would you login back?
+1. Why we need ad-hoc ansible commands, scenario where you have used ansible ad-hoc command?
+2. When i need detailed logs on executing ansible playbook what option i need to use?
+3. what is ansible.cfg file?
+4. what are the modules have you worked on? 
+   which module will you use for getting the file from node to master?
+5. Lets say i have a playbook which has 5 tasks in playbook, 
+   first 2 tasks should run on local machine and other 3 tasks should run on node?
+
+6. Lets say i have 4 machines consider 1 as ansible master other 3 as nodes, what are the basic setup you need to do for ansible cluster?
+7. what are ansible roles? why we need ansible roles? have you worked on ansible galaxy?
+8. What are ansible facts?
+9. Can we have windows machine as ansible master? 
+   as node?have you worked on any windows modules? can you list few?
+   any extra configuration do we need to do?
+
+10. What is the best method to make your ansible YAML files reusable?
+11. What is ansible vault and ansible tower?
+12. Lets say I have playbook need to be run with Root user how would you do this?
+13. Difference between copy and fetch module?
+14. Why ansible ?
+15. What makes ansible powerful than other tools like chef and puppet?
+16. modules that you have worked on? Can we create custom module ?
+17. What is dynamic inventory in ansible?
+18. Lets say I have both Ubuntu and centos machines as nodes I want install application tree using same playbook, 
+    how would you approach this scenario?
+19. How to handle prompts with ansible playbook?
+
+20. What is ansible galaxy
+21. What are handlers and notify in ansible playbook
+22. What are adhoc commands
+
+23. Is it possible to set fact using ansible playbook?
+24. can we concate line to exsisting file in remote server, 
+    example exporting env variable in bashrc? 
+    ( also imporatnt when the playbook runs again if the value exsists then you should not insert)
+25. Difference between copy and template module?
+26. In one of the template file need to use remote machine ip, how do we read the machine ip value?
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 Docker
-Any 3 best practices of docker?
-Difference between docker stop and docker kill?
-Command to list conatiners which state is exited?
-command to clean-up docker host ( deleting stopped conatiners, dangling images and unused networks)?
-What version of docker you have used? Specific reason to use that particular version?
-Can we have multiple CMD in Dockerfile?
-Have you worked on docker swarm and docker compose?
+1. Lets say I have 1 GB file that has to be sent to docker daemon, 
+   as its 1GB it will take muchtime and network too. 
+   By which option while building dockerfile we can send the fileIn better manner?
+2. What is the difference between ADD and COPY docker instructions in Dockerfile?
+3. Command to remove to stopped and running Containers?
+4. Inside the container I did many changes like Creating, 
+   modifying and deleting file but
+   I Wanted to check which files has been changed And what action has been taken what is the Command we need to use ?
+
+5. Any 3 best practices of docker?
+6. Difference between docker stop and docker kill?
+7. Command to list conatiners which state is exited?
+8. command to clean-up docker host ( deleting stopped conatiners, dangling images and unused networks)?
+9. What version of docker you have used? Specific reason to use that particular version?
+10. Can we have multiple CMD in Dockerfile?
+11. Have you worked on docker swarm and docker compose?
+
+12. Have you worked on multi-stage dockerfile and why we need that?
+13. Lets say i have container which is attached with a volume, if container crashes what happens to volume?
+14. can you copy a file form local to run container?
+
+15. What does ONBUILD instruction do in Dockerfile?
+16. What is the use of .dockerignore file?
+17. I have dockerfile that accepts arguments, if I supply value as 
+    “1” then it should use maven 2.x version for base image and
+    if I supply “2” then it should take maven latest as base image
+18. What are docker compose and docker swarm?
+
+19. How to configure docker private registry?
+20. Types of network in docker? if you dont specify network to deploy on which network the conatiner will be created?
+21. Explain a sample dockerfile that you have used in your project?
+22. Can we launch linux conatiners windows and viceversa?
+
+23. Why we need docker compose and docker swarm
+24. What's the difference between docker volume and docker mounting
+25. What is the importance of .dockerigonre file, can name docker file with any other name?
+26. I need to delete all stopped containers and unused images command for that?
+27. How do you monitor docker in production
+28. Is it good to use docker compose in production
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 Kubernetes
-Can we have multiple conatiners in a pod? Can we have similar conatiners in a pod? Lets say i have 4 conatiners, one of them has failed how would you check which container has failed?
-What is liveness and readiness probe? Why we need them?
-Have you worked on kubernetes monitoring? Which tools you have used?
-Can we deploy a pod on particular node?
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-[200~GIT
-Lets say your organization has github and bitbucket to store code, you have cloned a repo onto your local and changed directory name. after some days one of your team members asks you to share clone link, how would you provide the same?
-I have shell script to delete particular dependency ( repo is maven project ). before running the script i need to clone repo to my local, here point to note i should only clone master branch and only last commit ( last commit has all the code ) how would you do this?
-what is submodule and why we need submodule?
-Lets say you have changed 5 files a,b,c,d and e in a repo and you did git add ., now all the files are in staging area, now i decided not to commit file d. how would delete it from staging area?
-Maven
-what is multi module project in maven and what are the setting you want to do in multi module parent and child project? what is dependency management?
-what is transitive dependency?
-Jenkins
-Have you worked on commit based job in jenkins? what settings you need to do in jenkins and github to setup commit based job?
-you want to create 50 freestyle jobs with same configurations, but only change is job name. how would you achieve the same?
-How can you copy job from your local jenkins instance to other local jenkins instance?
-Unix and Shell scripting
-write a script which accepts file or folder, if its folder delete it else print "this is a file"?
-How to check whether particular port is already in use or not?
-Logic for checking whether supplied string for a script is palindrome or not? what are all the commands you will use?
-command to get number of lines in a file?
-Ansible
-Lets say i have 4 machines consider 1 as ansible master other 3 as nodes, what are the basic setup you need to do for ansible cluster?
-what are ansible roles? why we need ansible roles? have you worked on ansible galaxy?
-What are ansible facts?
-Can we have windows machine as ansible master? as node?have you worked on any windows modules? can you list few?any extra configuration do we need to do?
-Docker
-Have you worked on multi-stage dockerfile and why we need that?
-Lets say i have container which is attached with a volume, if container crashes what happens to volume?
-can you copy a file form local to run container?
-Kubernetes
-what is init container and side-car container?can you give simple scenario where we use these conatiners?
-which one is default deployment strategy? how it works?
-command to check the container logs in pod?
-what are the types of services present in kubernetes?
-What is the link between pod and service?
-:::::::::::::::::::::::::::::::::::::::::::::::::::
-What is git-cherry-pick? why we use it?
-Let’s say you’re working on new feature in some branch, now your manager says stop working on that and change few other things on old code. Here after changing the old code, I need to work on new code, so I need to place my new changes some place How would handle this scenario?
-What is a conflict in git?
-command to list all branches in a repo?
-Maven
-.m2 is local repository for maven, now I don’t want to use .m2 folder as my local repository I want to use some other folder as my local, is it possible in maven? If yes, how would you do that?
-mvn install -Dmaven.repo.local=/alternate/repo/location
-maven follows convention over configuration that means it assumes code should be there under src/main/java, test cases under src/tests and many more.Here my requirement is I don’t want to follow that conventions I need to use different folder structure is that possible in maven?
-mvn help:effective-pom -Doutput=pom_eff.xml
-What are dependency and plugin in maven? Give one example for each?
-What are 3 build life cycles in maven?
-In Which tag we will mention output artifact type( like jar, war or any other)?
-Unix and Shell scripting
-In a file I have ip addresses , I want list unique ip addresses with number of times its present in file?
-grep -E -o "([0-9]{1,3}[\.]){3}[0-9]{1,3}" logfile | sort | uniq -c | sort -nr
-What is exit status in UNIX?
-Lets say I have shell script name magic.sh when I execute. It gives “This is from magic.sh”, so now if I change file name to magic-test.sh I should get “This is from magic-test.sh” basically as name of file chages my output should also change?
-What is shebang ? Why it is used?
-Jenkins
-How to Downgrade plugins in Jenkins?
-Have you worked on Jenkinsfile? Can we use different nodes for each stage?
-Can you list few ways by which we can trigger our build in Jenkins? What is the difference between Build Periodically and Poll SCM?
+1. Can we have multiple conatiners in a pod? Can we have similar conatiners in a pod? Lets say i have 4 conatiners, 
+   one of them has failed how would you check which container has failed?
+2. What is liveness and readiness probe? Why we need them?
+3. Have you worked on kubernetes monitoring? Which tools you have used?
+4. Can we deploy a pod on particular node?
+
+5. what is init container and side-car container?can you give simple scenario where we use these conatiners?
+6. which one is default deployment strategy? how it works?
+7. command to check the container logs in pod?
+8. what are the types of services present in kubernetes?
+9. What is the link between pod and service?
+
+10. Components in kubernetes architecture?
+11. What are stateful sets in kuberentes?
+12. Command to find which container has failed in pod and command to get logs of container
+13. Tools to maintain kubernetes log files
+
+14. List objects you know in kubernetes?Give a brief about each object?
+15. Command to list pods and deployments
+
+
+16. What is Pod?
+17. Creation of cluster for k8s, can we have multi master and multi nodes cluster?
+18. On what basis the pod will be deployed on a specific node?
+19. Can we deploy pod on master node?
+20. What are steps that you might take to make one node into maintance?
+21. In the kubeadm setup the control plane components are created as pods, where the defination those pods will be defined?
+22. Why pods are not scheduled on master
+23. Why config maps are used
+24. What is the default deployment strategy
+25. Have you faced any issues while working k8s
+26. What is service account, role, role binding and namespace
+
+27. explain any 4 different types of pod statuses and also the reasons that why pod might go into that state?
+28. what are operators and give one example where we can use operator?
+29. what is the importance of kubeconfig file? Also lets say when you login to kuberenets by default it will pointed to default namespace, 
+    if i want list any objects which are other namespace need concate -n option for all the kubectl commands, 
+    is there a way we can set the namaspace to aviod -n option in all the commands?
+30. given a object how do we find api version and kind with respect to cluster?
+31. any work around to bring one pod out of rotation, when multiple replicas has been deployed?
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 AWS
-What are roles and policies in AWS IAM?
-Lets say I have 50 users , for all 50 users I need to provide same privileges how do it?
-I want to give programmatic access means They can access AWS services via api’s But should not be access AWS web console
-As AMI is region specific I want create Machine with AMI which there in other Region is that possible?
-Why we need security groups? By default what is outbound rules?
-What is VPC? Give a brief about VPC?
-Have you worked on Load balancers? If Yes, tell which load balancers you have used?
-Lets say I have created auto scaling rule when ever Load goes more than 60% create a new instance Currently I have 3 machines, 1st machine load is 62% , 2nd machine 30% and 3rd also 30%. Now will auto scale rule creates new machine ?
-Ansible
-What is the best method to make your ansible YAML files reusable?
-What is ansible vault and ansible tower?
-Lets say I have playbook need to be run with Root user how would you do this?
-Difference between copy and fetch module?
-Docker
-Lets say I have 1 GB file that has to be sent to docker daemon, as its 1GB it will take muchtime and network too. By which option while building dockerfile we can send the fileIn better manner?
-What is the difference between ADD and COPY docker instructions in Dockerfile?
-Command to remove to stopped and running Containers?
-Inside the container I did many changes like Creating, modifying and deleting file but I Wanted to check which files has been changed And what action has been taken what is the Command we need to use ?
-Kubernetes
-List objects you know in kubernetes?Give a brief about each object?
-Command to list pods and deployments
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-GIT
-What is git reset ? Types of reset ?
-How to delete local branch and remote branch in git ?
-Difference between git diff and git status ?
-What are hooks in git?
-MAVEN
-What are things you need to set, if you want download dependency from private repository ?
-What are the issues you faced while working on maven projects?
-Command to skip the test cases in maven
-JENKINS
-How to set Jenkins build to fail based specific word in console output ?
-What are active and reactive parameters (Dynamic parameterization) in Jenkins ?
-How to customize the build number display to something else in Jenkins job page?
-What are multi branch pipeline?
-What is shared library in Jenkins ?
-UNIX & SHELL SCRIPTING
-Command to find empty files in a given directory?
-Commands you will use it for configuring ssh connectivity between 2 machines and what files will be present in .ssh folder?
-How to schedule a shell script in unix machines?
-Command to get load average ?
-Need to identify ip addresses in log file and count of ip addresses in log file?
-ANSIBLE
-Why ansible ? What makes ansible powerful than other tools like chef and puppet?
-5 modules that you have worked on? Can we create custom module ?
-What is dynamic inventory in ansible?
-Lets say I have both Ubuntu and centos machines as nodes I want install application tree using same playbook, how would you approach this scenario?
-How to handle prompts with ansible playbook?
-DOCKER
-What does ONBUILD instruction do in Dockerfile?
-What is the use of .dockerignore file?
-I have dockerfile that accepts arguments, if I supply value as “1” then it should use maven 2.x version for base image and if I supply “2” then it should take maven latest as base image
-What are docker compose and docker swarm?
-KUBERNETES
-Components in kubernetes architecture?
-What are stateful sets in kuberentes?
-Command to find which container has failed in pod and command to get logs of container
-Tools to maintain kubernetes log files
-AWS
-Services used AWS and tasks performed in AWS
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-what is the importance .git directory?
-what are the branches, diff between remote and local branches?
-what Branching strategy that you are familier with?
-What PR (Pull request) is? whats the importance of PR?
-Unix & Shell scripting
-what is command for checking the running process? how to get PID of process?
-Command to get whether certain port is listing or not?
-How to indentify the number of params that has been sent to shell script?
-command to delete empty line in a file?
-Helm
-what is the need for helm charts?
-what version helm your using? what difference between helm 2 & helm3?
-Kubernetes
-What is Pod?
-Creation of cluster for k8s, can we have multi master and multi nodes cluster?
-On what basis the pod will be deployed on a specific node?
-Can we deploy pod on master node?
-What are steps that you might take to make one node into maintance?
-In the kubeadm setup the control plane components are created as pods, where the defination those pods will be defined?
-Docker
-How to configure docker private registry?
-Types of network in docker? if you dont specify network to deploy on which network the conatiner will be created?
-Explain a sample dockerfile that you have used in your project?
-Can we launch linux conatiners windows and viceversa?
-Maven
-what is multi module project?
-what is the importance of dependency managment?
-what are the settings that you need to do for mvn deploy ( to push artifcats to repository )?
-mvn version that you have used?
-Jenkin
-what is the need of CICD tools?
-What type of Jenkinsfile you have worked on?
-In master slave setup if I want run job on specific node is is possible?
-what is the importance of Jenkins secrets?
+1. What are roles and policies in AWS IAM?
+2. Lets say I have 50 users , for all 50 users I need to provide same privileges how do it?
+3. I want to give programmatic access means They can access AWS services via api’s But should not be access AWS web console
+   As AMI is region specific I want create Machine with AMI which there in other Region is that possible?
+4. Why we need security groups? By default what is outbound rules?
+5. What is VPC? Give a brief about VPC?
+6. Have you worked on Load balancers? If Yes, tell which load balancers you have used?
+7. Lets say I have created auto scaling rule when ever Load goes more than 60% create a new instance Currently I have 3 machines, 
+   1st machine load is 62% , 2nd machine 30% and 3rd also 30%. Now will auto scale rule creates new machine ?
+
+8. Services used AWS and tasks performed in AWS
+
+9. Services that you have worked on?
+10. Roles in IAM?
+11. I have 3 tier application, configure it with private and public subnet?
+12. How to replicate or create same machine with same configuration?
+13. Explain auto scalling in aws?
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+General Questions:
+1. What do you mean by continues integration, continues delivery and continues deployment
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 Monitoring
-If given a chance to setup monitoring solution for project what are tools that you use?
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-General questions
-What do you mean by continues integration, continues delivery and continues deployment
-Git
-Which version of git you have used?
-Difference between git merge and git rebase?
-What is git squash?
-Branching strategy used in your project?
-Command to list all commits?
-Maven
-Tell me 3 build lifecycle in maven? What does mvn site does?
-Is there way by which we can set local repository as some other custom directory, other than .m2?
-Settings that you make for mvn deploy?
-What is the default value of packaging tag? What other values for other artifact types?
-What are GAV's?
-Jenkins
-What are types jobs you have worked on??
-Can we have job for pr and once merge is done the source branch should be deleted?
-How do you take Jenkins backup?
-Can you tell me importance of post block??
-Docker
-Why we need docker compose and docker swarm
-What's the difference between docker volume and docker mounting
-What is the importance of .dockerigonre file, can name docker file with any other name?
-I need to delete all stopped containers and unused images command for that?
-How do you monitor docker in production
-Is it good to use docker compose in production
-Aws
-Services that you have worked on?
-Roles in IAM?
-I have 3 tier application, configure it with private and public subnet?
-How to replicate or create same machine with same configuration?
-Explain auto scalling in aws?
-Kubernetes
-Why pods are not scheduled on master
-Why config maps are used
-What is the default deployment strategy
-Have you faced any issues while working k8s
-What is service account, role, role binding and namespace
-Why we need helm
-Scripting
-You need to identify unused fields In values.yaml how would you approach this?
-What is exit status?
-Given machine, how will you identify which machine it is?
-Ansible
-What is ansible galaxy
-What are handlers and notify in ansible playbook
-What are adhoc commands::::::::::::::::::::::::::::::
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-Git & Github
-Branching strategy?
-Need a script which identify inactive branches ( no commits since 2 months )?
-How to set configs globally in git?
-Maven
-what are the tags that you came across in pom.xml?
-Explain maven life cycle?
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-Unix & Shell
-Lets say you have a script that will take more than a day to execute, in this case how do you run that script. Also as user you might not able to keep machine in interactive mode for longer period.
-Explain few uses cases where you have automated manual activites using shell script?
-is it possible to store a commands output, either success or failure to the same file?
-what is debug mode in shell script?
-set of commands executed at multiples places in shell script, want to standardize that is it possible something like to define function?
-In shell script can we supply parameters to functions?
-what is the use of shift command?
-can we change the color of script output?
-Black        0;30     Dark Gray     1;30
-Red          0;31     Light Red     1;31
-Green        0;32     Light Green   1;32
-Brown/Orange 0;33     Yellow        1;33
-Blue         0;34     Light Blue    1;34
-Purple       0;35     Light Purple  1;35
-Cyan         0;36     Light Cyan    1;36
-Light Gray   0;37     White         1;37
-tput command
-
-Num  Colour    #define         R G B
-
-0    black     COLOR_BLACK     0,0,0
-1    red       COLOR_RED       1,0,0
-2    green     COLOR_GREEN     0,1,0
-3    yellow    COLOR_YELLOW    1,1,0
-4    blue      COLOR_BLUE      0,0,1
-5    magenta   COLOR_MAGENTA   1,0,1
-6    cyan      COLOR_CYAN      0,1,1
-7    white     COLOR_WHITE     1,1,1
-tput text mode commands
-
-tput bold    # Select bold mode
-tput dim     # Select dim (half-bright) mode
-tput smul    # Enable underline mode
-tput rmul    # Disable underline mode
-tput rev     # Turn on reverse video mode
-tput smso    # Enter standout (bold) mode
-tput rmso    # Exit standout mode
-difference between break and exit 0 in shell script?
-delete files which are older than 10 days?
-delete empty files in a given directory?
-there is a specific command that has been used in shell script, but it provides lot of prompts. All those prompts should be answered by shell script is it possible in shell script?
-Monitoring
-what is the importance of monitoring?
-difference between metrics monitoring and log monitoring, give example for both type of monitoring?
-how do we configure endpoint in promethus to scrape the data?
-what is the use of node exporter and alert manager in prometheus?
-Can we monitor jenkins using prometheus? Also can we send mailer when jenkins is down?
-what are metric types that prometheus can accept?
-kubernetes
-explain any 4 different types of pod statuses and also the reasons that why pod might go into that state?
-what are operators and give one example where we can use operator?
-what is the importance of kubeconfig file? Also lets say when you login to kuberenets by default it will pointed to default namespace, if i want list any objects which are other namespace need concate -n option for all the kubectl commands, is there a way we can set the namaspace to aviod -n option in all the commands?
-given a object how do we find api version and kind with respect to cluster?
-any work around to bring one pod out of rotation, when multiple replicas has been deployed?
-Jenkins
-list of best practices to follow while writing Jenkins pipeline?
-Is it possible to run each stage on different agaent?
-Is it possible to change success or error message that we see in console ouput ?
-Have list of command that has to executed in certain directory in the code, is it possible to do the same?
-Can we have versioning on Jenkins freestyle job?
-Ansible
-Is it possible to set fact using ansible playbook?
-can we concate line to exsisting file in remote server, example exporting env variable in bashrc? ( also imporatnt when the playbook runs again if the value exsists then you should not insert)
-Difference between copy and template module?
-In one of the template file need to use remote machine ip, how do we read the machine ip value?
+1. what is the importance of monitoring?
+2. difference between metrics monitoring and log monitoring, give example for both type of monitoring?
+3. how do we configure endpoint in promethus to scrape the data?
+4. what is the use of node exporter and alert manager in prometheus?
+5. Can we monitor jenkins using prometheus? Also can we send mailer when jenkins is down?
+6. what are metric types that prometheus can accept?
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 Devops General Interview Questions
-Daily activites of devops engineer
-challenges that you have faced while working devops
-what are the envirnments which are there in the organization
-How the deployents move from one env to other env
+1. Daily activites of devops engineer
+2. challenges that you have faced while working devops
+3. what are the envirnments which are there in the organization
+4. How the deployents move from one env to other env
